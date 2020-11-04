@@ -107,6 +107,25 @@ $(document).ready( function() {
   // ciclo su array per stampa su html
   icons.forEach((icon) => {
 
+    // const type = [
+    //   {
+    //    type: 'animal',
+    //    color: 'blue',
+    //   },
+    //   {
+    //    type: 'vegetable',
+    //    color: 'orange',
+    //   },
+    //   {
+    //    type: 'user',
+    //    color: 'purple',
+    //   },
+    // ];
+    //
+    // if (type[0] === ) {
+    //
+    // }
+
      // destrutturiamo per prendere quello che ci serve e trasferirlo in html
     const {family,prefix,name} = icon;
 
@@ -119,7 +138,17 @@ $(document).ready( function() {
 
      // stampa dell'html creato
     container.append(html);
+
   });
+  // const type = [];
+  // icons.forEach((icon) => {
+  //
+  //   if (! type.includes(icon.type)) {
+  //
+  //       type.push(icon.type);
+  //   }
+  //
+  // });
 
 
 });//fine documento
