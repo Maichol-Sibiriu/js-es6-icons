@@ -101,4 +101,25 @@ $(document).ready( function() {
       },
   ];
 
+  // riferimenti html
+  const container = $(".icons");
+
+  // ciclo su array per stampa su html
+  icons.forEach((icon) => {
+
+     // destrutturiamo per prendere quello che ci serve e trasferirlo in html
+    const {family,prefix,name} = icon;
+
+    // creazione html da stampare
+    const html =
+      `<div class="box">
+        <i class="${family} ${prefix}${name}"></i>
+        <h3>${name}</h3>
+       </div>`
+
+     // stampa dell'html creato
+    container.append(html);
+  });
+
+
 });//fine documento
