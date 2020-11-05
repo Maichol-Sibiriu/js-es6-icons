@@ -101,33 +101,17 @@ $(document).ready( function() {
       },
   ];
 
+  // arrey di colori
+  const color = ["blue","orange","purple"];
+
   // riferimenti html
   const container = $(".icons");
 
   // ciclo su array per stampa su html
-  icons.forEach((icon) => {
-
-    // const type = [
-    //   {
-    //    type: 'animal',
-    //    color: 'blue',
-    //   },
-    //   {
-    //    type: 'vegetable',
-    //    color: 'orange',
-    //   },
-    //   {
-    //    type: 'user',
-    //    color: 'purple',
-    //   },
-    // ];
-    //
-    // if (type[0] === ) {
-    //
-    // }
+  icons.forEach((obj) => {
 
      // destrutturiamo per prendere quello che ci serve e trasferirlo in html
-    const {family,prefix,name} = icon;
+    const {family,prefix,name} = obj;
 
     // creazione html da stampare
     const html =
@@ -140,15 +124,26 @@ $(document).ready( function() {
     container.append(html);
 
   });
-  // const type = [];
-  // icons.forEach((icon) => {
-  //
-  //   if (! type.includes(icon.type)) {
-  //
-  //       type.push(icon.type);
-  //   }
-  //
-  // });
+
+
 
 
 });//fine documento
+
+// funzioni
+function ty(icons){
+
+  // array vuoto per i types
+  const types = [];
+  console.log(types);
+  // ciclo su array per la condizione types
+  icons.forEach((obj) => {
+
+    if (! types.includes(obj.type) ) {
+        types.push(obj.type);
+    }
+
+  });
+
+  return types;
+}
