@@ -107,16 +107,32 @@ $(document).ready( function() {
   // riferimenti html
   const container = $(".icons");
 
-  // ciclo su array per stampa su html
-  icons.forEach((obj) => {
+  // richiamo funzione type
+  const type = types(icons);
+
+  // assegnazione colore al type
+  const colorType = icons.map((obj) =>{
+
+    // index dell'array type
+    const indexType = type.indexOf(obj.type);
+
+     // spred
+     return {
+       ...obj,
+       color : color[indexType],
+     };
+  });
+
+  colorType.forEach((obj) => {
 
      // destrutturiamo per prendere quello che ci serve e trasferirlo in html
-    const {family,prefix,name} = obj;
+    const {family,prefix,name,color} = obj;
 
     // creazione html da stampare
     const html =
       `<div class="box">
-        <i class="${family} ${prefix}${name}"></i>
+        <i class="${family} ${prefix}${name}"
+        style="color: ${color}"></i>
         <h3>${name}</h3>
        </div>`
 
@@ -126,16 +142,14 @@ $(document).ready( function() {
   });
 
 
-
-
 });//fine documento
 
 // funzioni
-function ty(icons){
+function types(icons){
 
   // array vuoto per i types
   const types = [];
-  console.log(types);
+
   // ciclo su array per la condizione types
   icons.forEach((obj) => {
 
